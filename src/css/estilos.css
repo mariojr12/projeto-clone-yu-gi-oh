@@ -12,15 +12,15 @@ body {
 
 }
 
-.cabecalho { 
-    
+.cabecalho {
+
     display: flex;
     justify-content: center;
 
 }
 
 .cabecalho .titulo {
-    color:white;
+    color: white;
 
 }
 
@@ -52,6 +52,7 @@ body {
     height: 500px;
     border-radius: 10px;
     position: relative;
+    padding: 12px;
 
 }
 
@@ -84,7 +85,7 @@ body {
 }
 
 .cartao .nivel-carta {
-    
+
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -112,7 +113,7 @@ body {
 }
 
 .carta .informacoes .informacoes-ataque {
-    
+
     display: flex;
     justify-content: flex-end;
     gap: 5px;
@@ -133,30 +134,35 @@ body {
 }
 
 .fundo-1 {
-    background: url(../imagens/fundo-1.jpg)no-repeat ;
+    background: url(../imagens/fundo-1.jpg)no-repeat;
 }
+
 .fundo-2 {
     background: url(../imagens/fundo-2.jpg) no-repeat;
 }
-.fundo-3{
-    background: url(../imagens/fundo-3.jpg)
-    no-repeat;
+
+.fundo-3 {
+    background: url(../imagens/fundo-3.jpg) no-repeat;
 }
-.fundo-4 { 
+
+.fundo-4 {
     background: url(../imagens/fundo-4.jpg) no-repeat;
 }
+
 .fundo-5 {
     background: url(../imagens/fundo-5.jpg) no-repeat;
 }
+
 .fundo-6 {
     background: url(../imagens/fundo-6.jpg) no-repeat;
 }
-.fundo-7{
+
+.fundo-7 {
     background: url(../imagens/fundo-7.jpg) no-repeat;
 
 }
 
-.btn-seta{
+.btn-seta {
     background-color: white;
     width: 70px;
     height: 70px;
@@ -170,25 +176,58 @@ body {
     box-shadow: rgba(100, 100, 111, 0.2)0px 7px 29px 0px;
 
 }
-.btn-seta.btn-voltar{
+
+.btn-seta.btn-voltar {
     transform: rotate(180deg);
 
 }
-.btn-seta:hover{
-    background-color:  #8351fe; 
+
+.btn-seta:hover {
+    background-color: #8351fe;
 
 }
 
-body::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track {
     background-color: #c08057;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 10px;
 
 }
-::-webkit-scrollbar-thumb{
-    background-color:#c08057 ;
-}
-::-webkit-scrollbar-thumb:hover{
+
+::-webkit-scrollbar-thumb {
     background-color: #c08057;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #c08057;
+}
+
+.carta-virada{
+    display: none;
+}
+.carta-virada.mostrar-fundo-carta{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../imagens/fundo-carta.jpg);
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: 2;
+
+
+}
+.cartao.virar{
+transform: rotateZ(90deg);
+transition:transform 0.3s ease-in-out;
+}
+
+.esconder{
+    display: none;
+    
 }

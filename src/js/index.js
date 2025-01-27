@@ -1,28 +1,43 @@
 
- const btnAvancar=document.getElementById('btn-avancar')
- const cartoes=document.querySelectorAll('.cartao');
- let cartaoAtual=0;
- 
- btnAvancar.addEventListener('click',function(){
-  if(cartaoAtual===cartoes.length-1) return;
+const btnAvancar = document.getElementById('btn-avancar')
+const cartoes = document.querySelectorAll('.cartao');
+let cartaoAtual = 0;
 
+cartoes.forEach(cartao => {
+  cartao.addEventListener('click', function () {
+    const cartaVirada = cartao.querySelector('.carta-virada')
 
-    const cartaoSelecionado=document.querySelector('.selecionado');
-    cartaoSelecionado.classList.remove('selecionado');
+    //virar o cartão
+    cartao.classList.toggle('virar')
+    // mostrar o fundo da carta
+    cartaVirada.cartaVirada.toggle('mostrar-fundo-carta');
 
-     cartaoAtual++;   
-cartoes[cartaoAtual].classList.add('selecionado');
+    const descricao = cartao.querySelector('descricao');
+    descricao.classList.toggle('esconder');
+
   });
- 
-  const btnVoltar=document.getElementById('btn-voltar');
+});
 
-  btnVoltar.addEventListener('click',function(){
+btnAvancar.addEventListener('click', function () {
+  if (cartaoAtual === cartoes.length - 1) return;
 
-    if(cartaoAtual=== 0)return;
 
-      const cartaoSelecionado=document.querySelector('.selecionado');
-      cartaoSelecionado.classList.remove('selecionado');
-  
-       cartaoAtual--;   
+  const cartaoSelecionado = document.querySelector('.selecionado');
+  cartaoSelecionado.classList.remove('selecionado');
+
+  cartaoAtual++;
   cartoes[cartaoAtual].classList.add('selecionado');
-    });
+});
+
+const btnVoltar = document.getElementById('btn-voltar');
+
+btnVoltar.addEventListener('click', function () {
+
+  if (cartaoAtual === 0) return;
+
+  const cartaoSelecionado = document.querySelector('.selecionado');
+  cartaoSelecionado.classList.remove('selecionado');
+
+  cartaoAtual--;
+  cartoes[cartaoAtual].classList.add('selecionado');
+});
